@@ -29,10 +29,10 @@ export DOCKER_TLS_VERIFY=1
 
 # Stuff that only makes sense for bash
 #
-if [ `basename $SHELL` == "bash" ]; then
+if [ -n "$TERM" ]; then
 		# setup liquid prompt
 		if [ -f /usr/local/share/liquidprompt ]; then
-			. /usr/local/share/liquidprompt
+			. /usr/local/share/liquidprompt > /dev/null 2>&1
 		fi
 
 		# Setup bash completion
