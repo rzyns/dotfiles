@@ -48,6 +48,7 @@ fi
 
 # my aliases
 alias excel='open -a "Microsoft Excel"'
+alias ls='gls -GF --color'
 
 # Tell the rest of the world my profile's loaded!
 export MY_PROFILE_IS_LOADED=1
