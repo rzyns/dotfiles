@@ -3,6 +3,13 @@ set background=dark
 colorscheme solarized
 let g:solarized_termtrans=1
 
+" Setup soft tabs (spaces)
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+set lines=50 columns=120
+
 " Make Vim more useful
 set nocompatible
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
@@ -45,9 +52,9 @@ set number
 " Enable syntax highlighting
 syntax on
 " Highlight current line
-set cursorline
+" set cursorline
 " Make tabs as wide as two spaces
-set tabstop=2
+" set tabstop=2
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
@@ -84,16 +91,17 @@ endif
 set scrolloff=3
 
 " Strip trailing whitespace (,ss)
-function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
-endfunction
-noremap <leader>ss :call StripWhitespace()<CR>
+" function! StripWhitespace()
+"		let save_cursor = getpos(".")
+"		let old_query = getreg('/')
+"		:%s/\s\+$//e
+"		call setpos('.', save_cursor)
+"		call setreg('/', old_query)
+" endfunction
+
+"noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
+"noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " Automatic commands
 if has("autocmd")
