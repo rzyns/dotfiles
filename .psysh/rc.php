@@ -111,23 +111,33 @@ return call_user_func(function ($path) use (&$loader) {
       }
     });
 
+    require_once norm_path($path . $ds . 'inc/functions.inc');
+    spl_autoload_register('__autoload');
+
     call_user_func(function () use ($ds, $path) {
       global $db, $db_local, $site_name, $db_address_def, $db_database_def,
         $db_username_def, $db_password_def, $db_port_def;
 
+      $db_address   = (isset($db_address)) ? $db_address : $db_address_def;
+      $db_username  = (isset($db_username)) ? $db_username : $db_username_def;
+      $db_password  = (isset($db_password)) ? $db_password : $db_password_def;
+      $db_database  = (isset($db_database)) ? $db_database : $db_database_def;
+
       $db_port_def = is_numeric(@$db_port_def) ? (int) $db_port_def : 3306;
 
-      try {
-        $db_local = $db = new PDO(sprintf('mysql:host=%s;dbname=%s;port=%d',
-          $db_address_def, $db_database_def, $db_port_def),
-          $db_username_def, $db_password_def, array(
-              PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
-          ));
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-      } catch (PDOException $e) {
-        die("Couldn't connect to database: " . $e->getMessage() . PHP_EOL);
-      }
+      // try {
+      //   $db_local = $db = new PDO(sprintf('mysql:host=%s;dbname=%s;port=%d',
+      //     $db_address_def, $db_database_def, $db_port_def),
+      //     $db_username_def, $db_password_def, array(
+      //         PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+      //     ));
+      //   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      //   $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+      // } catch (PDOException $e) {
+      //   die("Couldn't connect to database: " . $e->getMessage() . PHP_EOL);
+      // }
+        $db = new DB($db_address, $db_username, $db_password, $db_database);
+        $db_local = $db;
     });
 
 
@@ -137,6 +147,16 @@ return call_user_func(function ($path) use (&$loader) {
     require_once norm_path($path . $ds . 'inc/wp-includes/plugin.php');
     require_once norm_path($path . $ds . 'inc/wp-includes/shortcodes.php');
     require_once norm_path($path . $ds . 'inc/theme.inc');
+    require_once norm_path($path . $ds . 'inc/embellish.php');
+
+    if (file_exists($ses = norm_path($path . $ds . '_sessions/session.php'))) {
+      include_once($ses);
+
+      foreach ($GLOBALS as $key => $val) {
+        global $$key;
+        $$key = $val;
+      }
+    }
 
     var_dump('Custom config loaded!', $conf);
   }
