@@ -10,3 +10,6 @@ if [ -e "${HOME}/.iterm2_shell_integration.bash" ]; then
   source "${HOME}/.iterm2_shell_integration.bash"
 fi
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  source $(brew --prefix)/etc/bash_completion
+fi
