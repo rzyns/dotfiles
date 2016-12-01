@@ -1,3 +1,6 @@
+# This is for environment variables and such that are not shell-specific or
+# scripts and such which detect their own environment
+
 export HOMEBREW_GITHUB_API_TOKEN=a680c42052b44d2dd8ba4330abee825309ad006f
 export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.composer/vendor/bin:$HOME/.themekit:$PATH
 
