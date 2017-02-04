@@ -75,18 +75,18 @@ return call_user_func(function ($path) use (&$loader) {
   if (file_exists($file) && is_readable($file)) {
     echo "Loading autoload.php...", PHP_EOL;
     $conf['defaultIncludes'][] = $file;
-  }
-
-  $file = norm_path('/Users/janusz/.composer/vendor/autoload.php');
-  if (file_exists($file) && is_readable($file)) {
-    echo "Loading global autoloader...", PHP_EOL;
-    $conf['defaultIncludes'][] = $file;
-  }
-
-  $file = norm_path(implode($ds, array($path, 'lib', 'autoload.php')));
-  if (file_exists($file) && is_readable($file)) {
-    echo "Loading lib/autoload.php...", PHP_EOL;
-    $conf['defaultIncludes'][] = $file;
+  } else {
+    $file = norm_path('/Users/janusz/.composer/vendor/autoload.php');
+    if (file_exists($file) && is_readable($file)) {
+      echo "Loading global autoloader...", PHP_EOL;
+      $conf['defaultIncludes'][] = $file;
+    } else {
+      $file = norm_path(implode($ds, array($path, 'lib', 'autoload.php')));
+      if (file_exists($file) && is_readable($file)) { 
+        echo "Loading lib/autoload.php...", PHP_EOL;
+        $conf['defaultIncludes'][] = $file;
+      }
+    }
   }
 
   if (preg_match('#^(?<root>.*/evesaddiction.com)(?:/.*)?$#', $path, $m)) {
