@@ -1,12 +1,12 @@
 {
     "minimum-stability": "beta",
     "require": {
-        "psy/psysh": "^0.7.2",
         "phpunit/phpunit": "^5.6",
         "phpunit/dbunit": "^2.0",
         "raulfraile/ladybug": "^1.0",
         "raulfraile/ladybug-theme-modern": "^1.0",
         "raulfraile/ladybug-plugin-extra": "^1.0",
-        "raulfraile/ladybug-installer": "^1.0"
+        "raulfraile/ladybug-installer": "^1.0",
+        "psy/psysh": "*"
     }
 }
