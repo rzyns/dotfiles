@@ -11,3 +11,7 @@
 	prompt = false
 [diff]
 	tool = Kaleidoscope
+[alias]
+	overview = log --graph --oneline --decorate=full --all
+	wip = commit -amWIP
+	piw = reset HEAD~1
