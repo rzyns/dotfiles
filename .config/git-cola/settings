@@ -1,0 +1,31 @@
+{
+    "bookmarks": [],
+    "gui_state": {
+        "mainview": {
+            "maximized": false,
+            "width": 987,
+            "height": 610,
+            "x": 704,
+            "y": 305,
+            "lock_layout": false,
+            "windowstate": "AAAA/wAAAAL9AAAAAwAAAAAAAAHsAAACYvwCAAAAAvsAAAAMAEMAbwBtAG0AaQB0AQAAAAAAAACpAAAAZAAAICT7AAAACABEAGkAZgBmAQAAAKwAAAG2AAAAJQD///8AAAABAAAB7AAAAmL8AgAAAAP7AAAADABTAHQAYQB0AHUAcwEAAAAAAAABMAAAAHMA////+wAAABIARgBhAHYAbwByAGkAdABlAHMBAAABMwAAAS8AAABzAP////sAAAAMAFIAZQBjAGUAbgB0AAAAAAD/////AAAAcwD///8AAAADAAAAAAAAAAD8AQAAAAH8AAAAAP////8AAAAAAP////r/////AQAAAAL7AAAADgBBAGMAdABpAG8AbgBzAAAAAAD/////AAAAugD////7AAAADgBDAG8AbgBzAG8AbABlAAAAAAD/////AAAAvQD///8AAAAAAAAB6wAAAAQAAAAEAAAACAAAAAj8AAAAAA==",
+            "show_status_filter": false
+        },
+        "gitdag": {
+            "maximized": false,
+            "width": 1280,
+            "height": 634,
+            "x": 0,
+            "y": 23,
+            "lock_layout": false,
+            "windowstate": "AAAA/wAAAAL9AAAAAgAAAAAAAAD3AAACevwCAAAAAvsAAAAGAEwAbwBnAQAAAAAAAAJ6AAAAcwD////7AAAACABEAGkAZgBmAAAAAd8AAAJLAAAAWwD///8AAAABAAAEBgAAAnr8AgAAAAL7AAAACgBHAHIAYQBwAGgBAAAAAAAAAnoAAABzAP////sAAAAKAEYAaQBsAGUAcwAAAALqAAABQAAAAHMA/////////QAAAnoAAAAEAAAABAAAAAgAAAAI/AAAAAA=",
+            "count": 1000
+        }
+    },
+    "recent": [
+        {
+            "name": "base",
+            "path": "/Users/janusz/Desktop/git-proposal/base"
+        }
+    ]
+}
